@@ -1,0 +1,234 @@
+Suma de números pares: Utiliza un bucle for para calcular la suma de los
+números pares del 1 al 50.
+let sumaParesFor = 0;
+
+for (let i = 2; i <= 50; i += 2) {
+  sumaParesFor += i;
+}
+
+console.log("La suma de los números pares del 1 al 50 (usando for) es:", sumaParesFor);
+
+
+
+
+
+42. Tabla de multiplicar: Utiliza un bucle for para imprimir la tabla de multiplicar de
+un número ingresado por el usuario del 1 al 12
+// Obtener el número del usuario
+const numeroUsuario = parseInt(prompt("Ingresa un número para mostrar su tabla de multiplicar:"));
+
+// Verificar si el número ingresado es válido
+if (!isNaN(numeroUsuario)) {
+  console.log(`Tabla de multiplicar del ${numeroUsuario}:`);
+  
+  // Bucle for para imprimir la tabla de multiplicar del número ingresado
+  for (let i = 1; i <= 12; i++) {
+    console.log(`${numeroUsuario} x ${i} = ${numeroUsuario * i}`);
+  }
+} else {
+  console.log("Por favor, ingresa un número válido.");
+}
+
+
+
+
+
+43. Contador de vocales: Utiliza un bucle while para contar el número de vocales en una
+palabra ingresada por el usuario.
+// Solicitar al usuario que ingrese una palabra
+const palabra = prompt("Ingresa una palabra para contar el número de vocales:");
+
+// Convertir la palabra ingresada a minúsculas para simplificar la comparación
+const palabraMinusculas = palabra.toLowerCase();
+
+// Inicializar el contador de vocales
+let contadorVocales = 0;
+let indice = 0;
+
+// Bucle while para contar las vocales en la palabra
+while (indice < palabra.length) {
+  const letra = palabraMinusculas.charAt(indice);
+
+  // Verificar si la letra es una vocal (a, e, i, o, u)
+  if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+    contadorVocales++;
+  }
+
+  indice++;
+}
+
+console.log(`El número de vocales en la palabra "${palabra}" es: ${contadorVocales}`);
+
+
+
+
+
+44. Contador de digitos: Utiliza un bucle for para contar el numero de dígitos en
+una serie de numeros ingresada por el usuario.
+// Solicitar al usuario que ingrese una palabra
+const palabra = prompt("Ingresa una serie de numeros para contar el número de dígitos:");
+
+// Inicializar el contador de dígitos
+let contadorDigitos = 0;
+
+// Bucle for para recorrer cada carácter de la palabra
+for (let i = 0; i < palabra.length; i++) {
+  // Verificar si el carácter actual es un dígito del 0 al 9
+  if (!isNaN(parseInt(palabra[i]))) {
+    contadorDigitos++;
+  }
+}
+
+console.log(`El número de dígitos en la palabra "${palabra}" es: ${contadorDigitos}`);
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Solicitar al usuario que ingrese una palabra
+const palabra = prompt("Ingresa una palabra para contar el número de dígitos:");
+
+// Inicializar el contador de dígitos
+let contadorDigitos = 0;
+
+// Bucle for para recorrer cada carácter de la palabra
+for (let i = 0; i < palabra.length; i++) {
+  // Verificar si el carácter actual es un dígito del 0 al 9
+  if (!isNaN(parseInt(palabra[i]))) {
+    contadorDigitos++;
+  }
+}
+console.log(`El número de dígitos en la palabra "${palabra}" es: ${contadorDigitos}`);
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+45. Adivina el número: Genera un número aleatorio y pide al usuario que adivine el
+número. Utiliza un bucle while para repetir la solicitud hasta que adivine
+correctamente
+// Generar un número aleatorio entre 1 y 100
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+let adivinado = false;
+let intentos = 0;
+
+while (!adivinado) {
+  // Solicitar al usuario que ingrese un número para adivinar
+  const numeroUsuario = parseInt(prompt("Adivina el número (entre 1 y 100):"));
+
+  // Verificar si el usuario ingresó un número válido
+  if (!isNaN(numeroUsuario)) {
+    intentos++;
+
+    // Comparar el número ingresado con el número aleatorio
+    if (numeroUsuario === numeroAleatorio) {
+      adivinado = true;
+      console.log(`¡Felicidades! Adivinaste el número ${numeroAleatorio} en ${intentos} intentos.`);
+    } else if (numeroUsuario < numeroAleatorio) {
+      console.log("El número es mayor. Intenta nuevamente.");
+    } else {
+      console.log("El número es menor. Intenta nuevamente.");
+    }
+  } else {
+    console.log("Por favor, ingresa un número válido.");
+  }
+}
+
+
+
+
+46. Contador de Alfabeto: Utiliza un bucle for para contar el número de letras del
+alfabeto(a..z) en una palabra ingresada por el usuario.
+// Solicitar al usuario que ingrese una palabra
+const palabra = prompt("Ingresa una palabra para contar el número de letras del alfabeto:");
+
+// Convertir la palabra ingresada a minúsculas para simplificar la comparación
+const palabraMinusculas = palabra.toLowerCase();
+
+// Inicializar el contador de letras del alfabeto
+let contadorLetrasAlfabeto = 0;
+
+// Bucle for para contar las letras del alfabeto en la palabra
+for (let i = 0; i < palabra.length; i++) {
+  const letra = palabraMinusculas.charAt(i);
+
+  // Verificar si el carácter actual es una letra del alfabeto (a..z)
+  if (letra >= 'a' && letra <= 'z') {
+    contadorLetrasAlfabeto++;
+  }
+}
+
+console.log(`El número de letras del alfabeto en la palabra "${palabra}" es: ${contadorLetrasAlfabeto}`);
+
+
+
+
+
+47. Suma de números impares: Utiliza un bucle while para calcular la suma de los
+números impares del 1 al 100.
+let numero = 1;
+let sumaImpares = 0;
+
+while (numero <= 100) {
+  if (numero % 2 !== 0) {
+    sumaImpares += numero;
+  }
+  numero++;
+}
+
+console.log("La suma de los números impares del 1 al 100 es:", sumaImpares);
+
+
+
+
+
+48. Contador de caracteres: Escribir un programa que lea una palabra y presenta
+cuantos caracteres hay en dicha palabra.
+const palabraUsuario = prompt("Ingresa una palabra para contar los caracteres:");
+let cantidadCaracteres = 0;
+
+for (let i = 0; i < palabraUsuario.length; i++) {
+  cantidadCaracteres++;
+}
+
+console.log(`La palabra "${palabraUsuario}" tiene ${cantidadCaracteres} caracteres.`);
+
+
+
+
+
+49. Suma de números: Pide al usuario que ingrese números enteros positivos uno
+por uno y utiliza un bucle while para calcular la suma de estos números. El ciclo
+debe terminar cuando el usuario ingrese un número negativo.
+let suma = 0;
+let numero = parseInt(prompt("Ingresa un número entero positivo (ingresa un número negativo para terminar):"));
+
+while (numero >= 0) {
+  suma += numero;
+  numero = parseInt(prompt("Ingresa otro número entero positivo (ingresa un número negativo para terminar):"));
+}
+
+console.log(`La suma de los números ingresados es: ${suma}`);
+
+
+
+
+
+50. Cuenta regresiva: Pide al usuario que ingrese un número entero positivo y utiliza
+un bucle while para mostrar una cuenta regresiva desde ese número hasta 1.
+let numero = parseInt(prompt("Ingresa un número entero positivo:"));
+
+if (numero > 0) {
+  console.log(`Cuenta regresiva desde ${numero} hasta 1:`);
+
+  while (numero >= 1) {
+    console.log(numero);
+    numero--;
+  }
+} else {
+  console.log("Por favor, ingresa un número entero positivo mayor que 0.");
+}
+
+
+
+
+
