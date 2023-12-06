@@ -1,0 +1,169 @@
+58. Función sin parámetros para saludar.
+function saludar() {
+  console.log("¡Hola! Bienvenido/a.");
+}
+
+// Llamando a la función para que imprima el saludo
+saludar();
+
+
+
+
+
+
+59. Función con parámetros para sumar dos números.
+function sumar(a, b) {
+  return a + b;
+}
+
+// Ejemplo de uso de la función sumar
+let numero1 = 5;
+let numero2 = 10;
+
+let result = sumar(numero1, numero2);
+console.log("La suma es: " + result);
+
+
+
+
+
+60. Función con return para multiplicar dos números.
+function multiplicar(a, b) {
+  return a * b;
+}
+
+// Ejemplo de uso de la función multiplicar
+let numero1 = 8;
+let numero2 = 4;
+
+let result = multiplicar(numero1, numero2);
+console.log("El resultado de la multiplicación es: " + result);
+
+
+
+
+
+
+61. Función sin return para determinar si un número es par o impar
+function verificarParOImpar(numero) {
+  if (numero % 2 === 0) {
+    console.log(numero + " es un número par.");
+  } else {
+    console.log(numero + " es un número impar.");
+  }
+}
+
+// Ejemplo de uso de la función para verificar si un número es par o impar
+let miNumero = 7;
+verificarParOImpar(miNumero);
+
+
+
+
+
+
+62. Función con parámetros y return para calcular el área de un rectángulo
+function calcularAreaRectangulo(longitud, ancho) {
+  let area = longitud * ancho;
+  return area;
+}
+
+// Ejemplo de uso de la función para calcular el área de un rectángulo
+let longitud = 5;
+let ancho = 10;
+
+let areaRectangulo = calcularAreaRectangulo(longitud, ancho);
+console.log("El área del rectángulo es: " + areaRectangulo);
+
+
+
+
+
+
+
+
+63. Función sin parámetros para imprimir tu nombre.
+function imprimirNombre() {
+  let miNombre = "Benjamin Cabrera"; // Reemplaza "Tu nombre" con tu nombre real
+  console.log("Mi nombre es: " + miNombre);
+}
+
+// Llamando a la función para imprimir tu nombre
+imprimirNombre();
+
+
+
+
+
+
+64. Función con return para convertir grados Celsius a Fahrenheit.
+function celsiusToFahrenheit(gradosCelsius) {
+  let gradosFahrenheit = (gradosCelsius * 9/5) + 32;
+  return gradosFahrenheit;
+}
+
+// Ejemplo de uso de la función para convertir grados Celsius a Fahrenheit
+let temperaturaCelsius = 25;
+let temperaturaFahrenheit = celsiusToFahrenheit(temperaturaCelsius);
+console.log(temperaturaCelsius + " grados Celsius son equivalentes a " + temperaturaFahrenheit + " grados Fahrenheit.");
+
+
+
+
+
+65. Función con parámetros para contar un carácter en una frase
+unction contarCaracter(frase, caracter) {
+  let contador = 0;
+  
+  for (let i = 0; i < frase.length; i++) {
+    if (frase.charAt(i) === caracter) {
+      contador++;
+    }
+  }
+
+  return contador;
+}
+
+// Ejemplo de uso de la función para contar un carácter en una frase
+let miFrase = "En mi grupo esta Reyes, Chacon, Pinela y Cabrera(yo)";
+let miCaracter = "e";
+let result = contarCaracter(miFrase, miCaracter);
+
+console.log("El carácter '" + miCaracter + "' aparece " + resultado + " veces en la frase: '" + miFrase + "'.");
+
+
+
+
+
+
+66. Función sin return para imprimir números del 1 al 10.
+function imprimirNumeros() {
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+}
+
+// Llamando a la función para imprimir los números del 1 al 10
+imprimirNumeros();
+
+
+
+
+
+
+67. Función con parámetros y return para sumar una lista de números
+function sumarNumeros(lista) {
+  let suma = 0;
+
+  // Iterar a través de la lista y sumar los números
+  for (let i = 0; i < lista.length; i++) {
+    suma += lista[i];
+  }
+
+  return suma;
+}
+
+// Ejemplo de uso de la función para sumar una lista de números
+let number = [3, 7, 11, 5, 8];
+let resultadoSuma = sumarNumeros(numeros);
+console.log("La suma de los números es: " + resultadoSuma);
