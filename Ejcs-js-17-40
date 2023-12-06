@@ -1,0 +1,619 @@
+17.Mayor de tres números: Solicita tres números y determina cuál es el mayor de
+ellos.
+// Solicitar al usuario que ingrese tres números
+let num1 = parseFloat(prompt("Ingrese el primer número:"));
+let num2 = parseFloat(prompt("Ingrese el segundo número:"));
+let num3 = parseFloat(prompt("Ingrese el tercer número:"));
+
+// Determinar el número mayor usando comparaciones
+let mayor = num1; // Supongamos que el primer número es el mayor inicialmente
+
+if (num2 > mayor) {
+    mayor = num2; // Si el segundo número es mayor, actualizamos el valor de 'mayor'
+}
+
+if (num3 > mayor) {
+    mayor = num3; // Si el tercer número es mayor, actualizamos el valor de 'mayor'
+}
+
+// Mostrar el número mayor
+console.log("El número mayor es: " + mayor);
+
+
+
+
+
+
+
+
+18.Edad mínima para votar: Pregunta la edad del usuario y verifica si es elegible
+para votar (18 años o más).
+// Pedir la edad al usuario
+let edad = prompt("¿Cuál es tu edad?");
+
+// Convertir la entrada del usuario a un número entero
+edad = parseInt(edad);
+
+// Verificar si la edad es mayor o igual a 18
+if (edad >= 18) {
+  console.log("Eres elegible para votar.");
+} else {
+  console.log("Lo siento, debes tener al menos 18 años para votar.");
+}
+
+
+
+
+
+
+
+
+
+19. Calculadora de BMI: Crea un programa que calcule el índice de masa corporal
+(BMI) a partir del peso y la altura del usuario, y luego indique si está en una
+categoría de peso saludable.
+// Pedir al usuario su peso en kilogramos
+let peso = prompt("Ingresa tu peso en kilogramos:");
+
+// Pedir al usuario su altura en metros
+let altura = prompt("Ingresa tu altura en metros:");
+
+// Convertir las entradas del usuario a números flotantes
+peso = parseFloat(peso);
+altura = parseFloat(altura);
+
+// Calcular el índice de masa corporal (BMI)
+let bmi = peso / (altura * altura);
+
+// Determinar la categoría de peso
+let categoria = "";
+if (bmi < 18.5) {
+  categoria = "Bajo peso";
+} else if (bmi >= 18.5 && bmi < 25) {
+  categoria = "Peso normal";
+} else if (bmi >= 25 && bmi < 30) {
+  categoria = "Sobrepeso";
+} else {
+  categoria = "Obesidad";
+}
+
+// Mostrar el BMI y la categoría de peso al usuario
+console.log("Tu índice de masa corporal (BMI) es: " + bmi.toFixed(2));
+console.log("Estás en la categoría de: " + categoria);
+
+
+
+
+
+
+
+
+20. Número positivo, negativo o cero: Pide al usuario que ingrese un número y
+muestra si es positivo, negativo o cero.
+// Pedir al usuario que ingrese un número
+let numero = parseFloat(prompt("Ingresa un número:"));
+
+// Verificar si el número es positivo, negativo o cero
+if (numero > 0) {
+    console.log("El número ingresado es positivo.");
+} else if (numero < 0) {
+    console.log("El número ingresado es negativo.");
+} else {
+    console.log("El número ingresado es cero.");
+}
+
+
+
+
+
+
+
+21. Año bisiesto: Solicita al usuario un año y determina si es un año bisiesto o no.
+Un año bisiesto es divisible por 4, pero no por 100, a menos que también sea
+divisible por 400.
+// Función para determinar si un año es bisiesto o no
+function esBisiesto() {
+  var year = parseInt(prompt('Ingrese un año para determinar si es bisiesto:'));
+
+  if (!isNaN(year)) {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+      alert(year + ' es un año bisiesto.');
+    } else {
+      alert(year + ' no es un año bisiesto.');
+    }
+  } else {
+    alert('Por favor, ingrese un año válido.');
+  }
+}
+
+// Llamada a la función para determinar si el año es bisiesto o no
+esBisiesto();
+
+
+
+
+
+
+
+
+22. Signo zodiacal: Pide al usuario que ingrese su mes y día de nacimiento, luego
+determina su signo zodiacal. Puedes usar una serie de declaraciones if para
+comparar las fechas ingresadas con las fechas límite de cada signo zodiacal.
+// Función para determinar el signo zodiacal según la fecha de nacimiento
+function determinarSigno() {
+  var mes = parseInt(prompt('Ingresa el número de tu mes de nacimiento (ejemplo: 1 para enero, 2 para febrero, etc.):'));
+  var dia = parseInt(prompt('Ingresa el día de tu nacimiento:'));
+
+  if (!isNaN(mes) && !isNaN(dia) && mes >= 1 && mes <= 12 && dia >= 1 && dia <= 31) {
+    var signo = '';
+
+    if ((mes === 3 && dia >= 21) || (mes === 4 && dia <= 19)) {
+      signo = 'Aries';
+    } else if ((mes === 4 && dia >= 20) || (mes === 5 && dia <= 20)) {
+      signo = 'Tauro';
+    } else if ((mes === 5 && dia >= 21) || (mes === 6 && dia <= 20)) {
+      signo = 'Géminis';
+    } else if ((mes === 6 && dia >= 21) || (mes === 7 && dia <= 22)) {
+      signo = 'Cáncer';
+    } else if ((mes === 7 && dia >= 23) || (mes === 8 && dia <= 22)) {
+      signo = 'Leo';
+    } else if ((mes === 8 && dia >= 23) || (mes === 9 && dia <= 22)) {
+      signo = 'Virgo';
+    } else if ((mes === 9 && dia >= 23) || (mes === 10 && dia <= 22)) {
+      signo = 'Libra';
+    } else if ((mes === 10 && dia >= 23) || (mes === 11 && dia <= 21)) {
+      signo = 'Escorpio';
+    } else if ((mes === 11 && dia >= 22) || (mes === 12 && dia <= 21)) {
+      signo = 'Sagitario';
+    } else if ((mes === 12 && dia >= 22) || (mes === 1 && dia <= 19)) {
+      signo = 'Capricornio';
+    } else if ((mes === 1 && dia >= 20) || (mes === 2 && dia <= 18)) {
+      signo = 'Acuario';
+    } else if ((mes === 2 && dia >= 19) || (mes === 3 && dia <= 20)) {
+      signo = 'Piscis';
+    } else {
+      signo = 'No se pudo determinar el signo con las fechas ingresadas.';
+    }
+
+    alert('Tu signo zodiacal es: ' + signo);
+  } else {
+    alert('Por favor, ingresa una fecha de nacimiento válida.');
+  }
+}
+
+// Llamada a la función para determinar el signo zodiacal
+determinarSigno();
+
+
+
+
+
+
+
+
+23. Día del mes con respecto a la segunda quincena: Solicita al usuario que ingrese
+un número de día del mes (por ejemplo, del 1 al 31) y verifica si ese día
+pertenece a la primera quincena (días 1-15) o a la segunda quincena (días 16-31)
+// Función para determinar a qué quincena pertenece un día del mes
+function determinarQuincena() {
+  var dia = parseInt(prompt('Ingresa un número de día del mes (del 1 al 31):'));
+
+  if (!isNaN(dia) && dia >= 1 && dia <= 31) {
+    var quincena = '';
+
+    if (dia >= 1 && dia <= 15) {
+      quincena = 'El día ' + dia + ' pertenece a la primera quincena.';
+    } else {
+      quincena = 'El día ' + dia + ' pertenece a la segunda quincena.';
+    }
+
+    alert(quincena);
+  } else {
+    alert('Por favor, ingresa un número de día válido (del 1 al 31).');
+  }
+}
+
+// Llamada a la función para determinar a qué quincena pertenece el día
+determinarQuincena();
+
+
+
+
+
+
+
+
+24. Día de la semana: Pide al usuario que ingrese un número del 1 al 7, donde 1
+representa el domingo, 2 el lunes, 3 el martes, y así sucesivamente. Luego,
+utiliza una estructura switch para mostrar el nombre del día de la semana
+correspondiente al número ingresado.
+// Función para mostrar el nombre del día de la semana según el número ingresado
+function mostrarDiaSemana() {
+  var numeroDia = parseInt(prompt('Ingresa un número del 1 al 7:\n(1: Domingo, 2: Lunes, 3: Martes, etc.)'));
+
+  var nombreDia;
+
+  switch (numeroDia) {
+    case 1:
+      nombreDia = 'Domingo';
+      break;
+    case 2:
+      nombreDia = 'Lunes';
+      break;
+    case 3:
+      nombreDia = 'Martes';
+      break;
+    case 4:
+      nombreDia = 'Miércoles';
+      break;
+    case 5:
+      nombreDia = 'Jueves';
+      break;
+    case 6:
+      nombreDia = 'Viernes';
+      break;
+    case 7:
+      nombreDia = 'Sábado';
+      break;
+    default:
+      nombreDia = 'Número de día inválido';
+  }
+
+  alert('El número ' + numeroDia + ' corresponde a: ' + nombreDia);
+}
+
+// Llamada a la función para mostrar el nombre del día de la semana
+mostrarDiaSemana();
+
+
+
+
+
+
+
+
+25. Frases iguales: Escribir un programa que ingrese dos frases e indique si son
+iguales
+// Función para comparar si dos frases son iguales
+function compararFrases() {
+  var frase1 = prompt('Ingrese la primera frase:');
+  var frase2 = prompt('Ingrese la segunda frase:');
+
+  if (frase1 === frase2) {
+    alert('Las frases son iguales.');
+  } else {
+    alert('Las frases no son iguales.');
+  }
+}
+
+// Llamada a la función para comparar las frases ingresadas
+compararFrases();
+
+
+
+
+
+
+
+
+26. Calculadora de precio con descuento: Crea un programa que permita a un
+usuario ingresar el precio de un artículo y un porcentaje de descuento. El
+programa debe calcular y mostrar el precio final después del descuento.
+// Función para calcular el precio final con descuento
+function calcularPrecioConDescuento() {
+  var precio = parseFloat(prompt('Ingrese el precio del artículo:'));
+  var porcentajeDescuento = parseFloat(prompt('Ingrese el porcentaje de descuento:'));
+
+  if (!isNaN(precio) && !isNaN(porcentajeDescuento)) {
+    var descuento = (precio * porcentajeDescuento) / 100;
+    var precioFinal = precio - descuento;
+
+    alert('El precio final después del descuento es: ' + precioFinal.toFixed(2));
+  } else {
+    alert('Por favor, ingrese valores numéricos válidos.');
+  }
+}
+
+// Llamada a la función para calcular el precio con descuento
+calcularPrecioConDescuento();
+
+
+
+
+
+
+
+
+27. Calculadora de factura con impuestos: Solicita al usuario que ingrese el total
+de una factura y el porcentaje de impuestos aplicado. Luego, calcula y muestra
+el monto total a pagar, incluyendo los impuestos.
+// Solicitar al usuario que ingrese el total de la factura
+var totalFactura = parseFloat(prompt("Ingrese el total de la factura:"));
+
+// Validar si el valor ingresado es un número válido
+if (isNaN(totalFactura)) {
+  console.log("Por favor, ingrese un número válido para el total de la factura.");
+} else {
+  // Solicitar al usuario que ingrese el porcentaje de impuestos
+  var porcentajeImpuestos = parseFloat(prompt("Ingrese el porcentaje de impuestos aplicado:"));
+
+  // Validar si el valor ingresado para el porcentaje de impuestos es un número válido
+  if (isNaN(porcentajeImpuestos)) {
+    console.log("Por favor, ingrese un número válido para el porcentaje de impuestos.");
+  } else {
+    // Calcular el monto total a pagar, incluyendo impuestos
+    var impuestos = (totalFactura * porcentajeImpuestos) / 100;
+    var montoTotalPagar = totalFactura + impuestos;
+
+    // Mostrar el monto total a pagar, incluyendo impuestos
+    console.log("El monto total a pagar, incluyendo impuestos, es: " + montoTotalPagar.toFixed(2));
+  }
+}
+
+
+
+
+
+
+
+
+28. Calculadora de sueldo con aumento: Pide al usuario que ingrese su salario
+actual y el porcentaje de aumento que recibirá. Calcula y muestra el nuevo
+salario después del aumento.
+// Solicitar al usuario que ingrese su salario actual
+var salarioActual = parseFloat(prompt("Ingrese su salario actual:"));
+
+// Validar si el valor ingresado es un número válido
+if (isNaN(salarioActual)) {
+  console.log("Por favor, ingrese un número válido para el salario actual.");
+} else {
+  // Solicitar al usuario que ingrese el porcentaje de aumento
+  var porcentajeAumento = parseFloat(prompt("Ingrese el porcentaje de aumento:"));
+
+  // Validar si el valor ingresado para el porcentaje de aumento es un número válido
+  if (isNaN(porcentajeAumento)) {
+    console.log("Por favor, ingrese un número válido para el porcentaje de aumento.");
+  } else {
+    // Calcular el nuevo salario después del aumento
+    var aumento = (salarioActual * porcentajeAumento) / 100;
+    var nuevoSalario = salarioActual + aumento;
+
+    // Mostrar el nuevo salario después del aumento
+    console.log("Su nuevo salario después del aumento es: " + nuevoSalario.toFixed(2));
+  }
+}
+
+
+
+
+
+
+
+
+29. Calculadora de compra con múltiples artículos: Permite al usuario ingresar el
+precio y la cantidad de varios artículos que está comprando. Calcula el total de
+la compra y aplica un descuento del 10% si el total es mayor a cierta cantidad
+(por ejemplo, $100).
+// Función para calcular el descuento del 10% si el total es mayor a $100
+function calcularDescuento(total) {
+  if (total > 100) {
+    return total * 0.1; // 10% de descuento
+  } else {
+    return 0;
+  }
+}
+
+// Solicitar al usuario la cantidad de artículos que va a comprar
+var cantidadArticulos = parseInt(prompt("Ingrese la cantidad de artículos que va a comprar:"));
+
+// Validar si la cantidad ingresada es un número válido
+if (isNaN(cantidadArticulos) || cantidadArticulos <= 0) {
+  console.log("Por favor, ingrese un número válido y mayor que cero para la cantidad de artículos.");
+} else {
+  var totalCompra = 0;
+
+  // Calcular el total de la compra para cada artículo
+  for (var i = 1; i <= cantidadArticulos; i++) {
+    var precioArticulo = parseFloat(prompt("Ingrese el precio del artículo " + i + ":"));
+    var cantidad = parseInt(prompt("Ingrese la cantidad del artículo " + i + ":"));
+
+    // Validar si los valores ingresados son números válidos
+    if (isNaN(precioArticulo) || isNaN(cantidad) || precioArticulo <= 0 || cantidad <= 0) {
+      console.log("Por favor, ingrese números válidos y mayores que cero para el precio y la cantidad del artículo " + i + ".");
+      break; // Detener el bucle si hay un error en la entrada de datos
+    } else {
+      totalCompra += precioArticulo * cantidad; // Calcular el total por artículo y sumarlo al total de la compra
+    }
+  }
+
+  // Calcular el descuento, si corresponde
+  var descuento = calcularDescuento(totalCompra);
+
+  // Calcular el total de la compra después del descuento
+  var totalConDescuento = totalCompra - descuento;
+
+  // Mostrar el total de la compra y si se aplicó descuento
+  console.log("El total de la compra es: $" + totalCompra.toFixed(2));
+  if (descuento > 0) {
+    console.log("Se aplicó un descuento del 10% ($" + descuento.toFixed(2) + ").");
+    console.log("El total a pagar con descuento es: $" + totalConDescuento.toFixed(2));
+  } else {
+    console.log("No se aplicó ningún descuento.");
+  }
+}
+
+
+
+
+
+
+
+
+33. Descuento por antigüedad en la empresa: Pregunta al usuario cuántos años ha
+estado trabajando en una empresa y calcula su bono de antigüedad. Si ha
+trabajado más de 5 años, otorga un bono del 5% sobre su salario.
+// Solicitar al usuario la cantidad de años trabajados en la empresa
+var añosTrabajados = parseInt(prompt("Ingrese la cantidad de años que ha estado trabajando en la empresa:"));
+
+// Validar si la cantidad ingresada es un número válido
+if (isNaN(añosTrabajados) || añosTrabajados < 0) {
+  console.log("Por favor, ingrese un número válido y mayor o igual a cero para los años trabajados.");
+} else {
+  // Solicitar al usuario su salario
+  var salario = parseFloat(prompt("Ingrese su salario actual:"));
+
+  // Validar si el salario ingresado es un número válido
+  if (isNaN(salario) || salario <= 0) {
+    console.log("Por favor, ingrese un salario válido y mayor que cero.");
+  } else {
+    var bonoAntiguedad = 0;
+
+    // Calcular el bono de antigüedad si ha trabajado más de 5 años
+    if (añosTrabajados > 5) {
+      bonoAntiguedad = salario * 0.05; // Bono del 5% sobre el salario
+    }
+
+    // Mostrar el bono de antigüedad, si corresponde
+    if (bonoAntiguedad > 0) {
+      console.log("¡Felicidades! Usted recibe un bono de antigüedad del 5% sobre su salario.");
+      console.log("El monto del bono es: $" + bonoAntiguedad.toFixed(2));
+    } else {
+      console.log("No cumple con los requisitos para recibir un bono de antigüedad.");
+    }
+  }
+}
+
+
+
+
+
+
+
+
+34. Calculadora de envío con tarifas diferentes: Crea un programa que permita al
+usuario ingresar la distancia de envío y calcule el costo del envío. Si la distancia
+es inferior a 50 km, el costo es de $10. Si la distancia es de 50 km o más, el
+costo es de $20.
+// Solicitar al usuario que ingrese la distancia de envío
+var distanciaEnvio = parseInt(prompt("Ingrese la distancia de envío en kilómetros:"));
+
+// Validar si la distancia ingresada es un número válido
+if (isNaN(distanciaEnvio) || distanciaEnvio < 0) {
+  console.log("Por favor, ingrese una distancia válida mayor o igual a cero.");
+} else {
+  var costoEnvio = 0;
+
+  // Calcular el costo del envío según la distancia
+  if (distanciaEnvio < 50) {
+    costoEnvio = 10; // Costo de envío si la distancia es inferior a 50 km
+  } else {
+    costoEnvio = 20; // Costo de envío si la distancia es de 50 km o más
+  }
+
+  // Mostrar el costo del envío
+  console.log("El costo del envío para una distancia de " + distanciaEnvio + " km es: $" + costoEnvio.toFixed(2));
+}
+
+
+
+
+
+
+
+
+35. Calculadora de descuento por lealtad del cliente: Pide al usuario que ingrese el
+total de sus compras mensuales durante un año. Si el total es superior a $500,
+aplica un descuento del 10% en la próxima compra.
+// Solicitar al usuario que ingrese el total de sus compras mensuales durante un año
+var totalComprasAnuales = parseFloat(prompt("Ingrese el total de sus compras mensuales durante un año:"));
+
+// Validar si el valor ingresado es un número válido
+if (isNaN(totalComprasAnuales) || totalComprasAnuales < 0) {
+  console.log("Por favor, ingrese un número válido mayor o igual a cero para el total de compras anuales.");
+} else {
+  // Verificar si el total de compras anuales es superior a $500 para aplicar el descuento
+  if (totalComprasAnuales > 500) {
+    console.log("¡Felicidades! Usted es elegible para un descuento del 10% en su próxima compra.");
+  } else {
+    console.log("No supera el monto mínimo de compras para aplicar un descuento.");
+  }
+}
+
+
+
+
+
+
+
+
+36. Calculadora de descuento por volumen de compra: Permite al usuario ingresar
+la cantidad de unidades de un producto que va a comprar y el precio unitario.
+Aplica descuentos por volumen de compra según las siguientes reglas:
+37. 10-50 unidades: 5% de descuento
+38. 51-100 unidades: 10% de descuento
+39. Más de 100 unidades: 15% de descuento
+// Solicitar al usuario la cantidad de unidades y el precio unitario del producto
+var cantidadUnidades = parseInt(prompt("Ingrese la cantidad de unidades del producto a comprar:"));
+var precioUnitario = parseFloat(prompt("Ingrese el precio unitario del producto:"));
+
+// Validar si las cantidades ingresadas son números válidos
+if (isNaN(cantidadUnidades) || isNaN(precioUnitario) || cantidadUnidades <= 0 || precioUnitario <= 0) {
+  console.log("Por favor, ingrese cantidades válidas y mayores que cero.");
+} else {
+  var precioTotal = cantidadUnidades * precioUnitario;
+  var descuento = 0;
+
+  // Aplicar descuentos por volumen de compra
+  if (cantidadUnidades >= 10 && cantidadUnidades <= 50) {
+    descuento = precioTotal * 0.05; // Descuento del 5% para 10-50 unidades
+  } else if (cantidadUnidades > 50 && cantidadUnidades <= 100) {
+    descuento = precioTotal * 0.1; // Descuento del 10% para 51-100 unidades
+  } else if (cantidadUnidades > 100) {
+    descuento = precioTotal * 0.15; // Descuento del 15% para más de 100 unidades
+  }
+
+  // Calcular el precio total con descuento
+  var precioTotalConDescuento = precioTotal - descuento;
+
+  // Mostrar el precio total y el descuento aplicado
+  console.log("El precio total de la compra es: $" + precioTotal.toFixed(2));
+  if (descuento > 0) {
+    console.log("Se aplicó un descuento de $" + descuento.toFixed(2) + ".");
+    console.log("El precio total con descuento es: $" + precioTotalConDescuento.toFixed(2));
+  } else {
+    console.log("No se aplicó ningún descuento.");
+  }
+}
+
+
+
+
+
+
+
+
+
+40. Calculadora de costo de servicio: Pregunta al usuario cuántas horas de servicio
+necesita y calcula el costo total. Si las horas son más de 10, aplica un
+descuento del 20%.
+// Solicitar al usuario la cantidad de horas de servicio necesarias
+var horasServicio = parseInt(prompt("Ingrese la cantidad de horas de servicio que necesita:"));
+
+// Validar si las horas ingresadas son un número válido
+if (isNaN(horasServicio) || horasServicio < 0) {
+  console.log("Por favor, ingrese un número válido mayor o igual a cero para las horas de servicio.");
+} else {
+  var costoPorHora = 50; // Precio por hora de servicio
+  var costoTotal = 0;
+
+  // Calcular el costo total del servicio
+  if (horasServicio > 10) {
+    costoTotal = horasServicio * costoPorHora * 0.8; // Aplicar un descuento del 20% si las horas son más de 10
+  } else {
+    costoTotal = horasServicio * costoPorHora; // Calcular el costo sin descuento si las horas son 10 o menos
+  }
+
+  // Mostrar el costo total del servicio
+  console.log("El costo total del servicio es: $" + costoTotal.toFixed(2));
+}
+
