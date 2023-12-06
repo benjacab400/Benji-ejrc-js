@@ -1,0 +1,212 @@
+//Dado a=3 y b=7, encuentra el valor de y = 2 * a + b - a mod 3.
+let a = 3;
+let b = 7;
+
+let y = 2 * a + b - a % 3;
+
+console.log("El valor de y es: " + y);
+
+//Si a=10 y b=4, calcula el valor de z = a * b + 3 mod a + b
+let a = 10;
+let b = 4;
+
+let z = (a * b + 3) % (a + b);
+
+console.log("El valor de z es: " + z);
+
+//Con a=6 y b=2, determina el valor de w = a - b + 2 * a mod b.
+let a = 6;
+let b = 2;
+
+let w = a - b + 2 * a % b;
+
+console.log("El valor de w es: " + w);
+
+//Para a=8 y b=5, encuentra el valor de v = 2 * b + a div 2 + 4 * b mod a.
+let a = 8;
+let b = 5;
+
+let v = 2 * b + Math.floor(a / 2) + 4 * b % a;
+
+console.log("El valor de v es: " + v);
+
+//Si a=12 y b=9, calcula el valor de u = b - a + 3 * a mod b.
+let a = 12;
+let b = 9;
+
+let u = b - a + 3 * a % b;
+
+console.log("El valor de u es: " + u);
+
+// (5 + 3 * 2) + 9 > 3 * 5 * 14 % 3
+let resultado = (5 + 3 * 2) + 9 > 3 * 5 * 14 % 3;
+
+console.log("El resultado es: " + resultado);
+
+//2 *(4 – 10 + 8)/2* 36 *(1/2)
+let resultado = 2 * (4 - 10 + 8) / (2 * 36 * (1 / 2));
+
+console.log("El resultado es: " + resultado);
+
+//260 / 12 + 54 % 3 – 85 % 7
+let resultado = 260 / 12 + 54 % 3 - 85 % 7;
+
+console.log("El resultado es: " + resultado);
+
+//(48 < 2 * 3) | | (2 * 7 < 12)
+let resultado = (48 < 2 * 3) || (2 * 7 < 12);
+
+console.log("El resultado es: " + resultado);
+
+//((8 > 2) | | (932 < 23) ) && 4 == 2
+let resultado = ((8 > 2) || (932 < 23)) && (4 == 2);
+
+console.log("El resultado es: " + resultado);
+
+//Suma de dos números: Escribe un programa que tome dos números como
+entrada y muestre su suma.
+// Pedir al usuario que ingrese dos números
+let primerNumero = parseFloat(prompt("Ingresa el primer número:"));
+let segundoNumero = parseFloat(prompt("Ingresa el segundo número:"));
+
+// Calcular la suma de los dos números
+let suma = primerNumero + segundoNumero;
+
+// Mostrar la suma
+console.log("La suma de los dos números es: " + suma);
+
+
+. Área de un triángulo: Pide al usuario que ingrese la base y la altura de un triángulo,
+luego calcula y muestra su área.
+// Pedir al usuario que ingrese la base y la altura del triángulo
+let base = parseFloat(prompt("Ingresa la base del triángulo:"));
+let altura = parseFloat(prompt("Ingresa la altura del triángulo:"));
+
+// Calcular el área del triángulo
+let area = (base * altura) / 2;
+
+// Mostrar el área del triángulo
+console.log("El área del triángulo con base " + base + " y altura " + altura + " es: " + area);
+
+Número par o impar: Solicita al usuario que ingrese un número e indica si es
+par o impar.
+// Pedir al usuario que ingrese un número
+let numero = parseInt(prompt("Ingresa un número:"));
+
+// Verificar si el número es par o impar
+if (numero % 2 === 0) {
+    console.log("El número ingresado es par.");
+} else {
+    console.log("El número ingresado es impar.");
+}
+
+Calculadora simple: Crea una calculadora que realice operaciones básicas
+como suma, resta, multiplicación y división, según la elección del usuario.
+// Función para realizar la suma
+function sumar(a, b) {
+  return a + b;
+}
+
+// Función para realizar la resta
+function restar(a, b) {
+  return a - b;
+}
+
+// Función para realizar la multiplicación
+function multiplicar(a, b) {
+  return a * b;
+}
+
+// Función para realizar la división
+function dividir(a, b) {
+  if (b === 0) {
+    return 'No se puede dividir por cero';
+  }
+  return a / b;
+}
+
+// Función principal de la calculadora
+function calcular() {
+  var operacion = prompt('Elije la operación a realizar: suma, resta, multiplicación o división').toLowerCase();
+
+  var numero1 = parseFloat(prompt('Introduce el primer número'));
+  var numero2 = parseFloat(prompt('Introduce el segundo número'));
+
+  var resultado;
+
+  switch (operacion) {
+    case 'suma':
+      resultado = sumar(numero1, numero2);
+      break;
+    case 'resta':
+      resultado = restar(numero1, numero2);
+      break;
+    case 'multiplicación':
+      resultado = multiplicar(numero1, numero2);
+      break;
+    case 'división':
+      resultado = dividir(numero1, numero2);
+      break;
+    default:
+      resultado = 'Operación no válida';
+  }
+
+  alert('El resultado de la ' + operacion + ' es: ' + resultado);
+}
+
+// Llamada a la función principal
+calcular();
+
+Tabla de multiplicar: Pide al usuario un número y muestra su tabla de
+multiplicar del 1 al 10.
+// Función para mostrar la tabla de multiplicar de un número dado
+function tablaMultiplicar() {
+  var numero = parseInt(prompt('Introduce un número para ver su tabla de multiplicar del 1 al 10:'));
+
+  if (isNaN(numero)) {
+    alert('Por favor, introduce un número válido.');
+    return;
+  }
+
+  document.write('<h2>Tabla de multiplicar del ' + numero + '</h2>');
+  document.write('<ul>');
+
+  for (var i = 1; i <= 10; i++) {
+    var resultado = numero * i;
+    document.write('<li>' + numero + ' x ' + i + ' = ' + resultado + '</li>');
+  }
+
+  document.write('</ul>');
+}
+
+// Llamada a la función para mostrar la tabla de multiplicar
+tablaMultiplicar();
+
+. Copiar palabra: Escribe un programa que lea dos palabras y concatena en otra
+variable las dos palabras
+// Función para concatenar dos palabras ingresadas por el usuario
+function concatenarPalabras() {
+  var palabra1 = prompt('Ingresa la primera palabra:');
+  var palabra2 = prompt('Ingresa la segunda palabra:');
+
+  var resultado = palabra1 + ' ' + palabra2;
+
+  alert('La concatenación de las dos palabras es: ' + resultado);
+}
+
+// Llamada a la función para concatenar palabras
+concatenarPalabras();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
