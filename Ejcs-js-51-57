@@ -1,0 +1,195 @@
+51 Suma de elementos: Crea un arreglo de números enteros y calcula la suma de todos sus
+elementos.
+// Arreglo de números enteros
+const numeros = [3, 7, 11, 5, 9];
+
+// Función para calcular la suma de los elementos del arreglo
+function sumaElementos(arreglo) {
+  let suma = 0;
+  for (let i = 0; i < arreglo.length; i++) {
+    suma += arreglo[i];
+  }
+  return suma;
+}
+
+// Calculando la suma de los elementos del arreglo 'numeros'
+const resultado = sumaElementos(numeros);
+console.log("La suma de los elementos es:", resultado);
+
+
+
+
+52. Promedio de calificaciones: Crea un arreglo de calificaciones (números decimales) y
+calcula el promedio de las calificaciones.
+// Arreglo de calificaciones
+const calificaciones = [8.5, 7.2, 9.0, 6.8, 8.9];
+
+// Función para calcular el promedio de las calificaciones
+function calcularPromedio(arr) {
+  if (arr.length === 0) {
+    return 0; // Retorna 0 si el arreglo está vacío para evitar división por cero
+  }
+
+  const suma = arr.reduce((total, calificacion) => total + calificacion, 0);
+  const promedio = suma / arr.length;
+  return promedio;
+}
+
+// Calculando el promedio de las calificaciones del arreglo 'calificaciones'
+const promedioCalificaciones = calcularPromedio(calificaciones);
+console.log("El promedio de las calificaciones es:", promedioCalificaciones);
+
+
+
+
+53. Mayor y menor valor: Encuentra el valor máximo y mínimo en un arreglo de números
+enteros.
+// Arreglo de números enteros
+const numeros = [5, 12, 3, 8, 20, 1];
+
+// Función para encontrar el valor máximo en el arreglo
+function encontrarMaximo(arr) {
+  if (arr.length === 0) {
+    return null; // Retorna null si el arreglo está vacío
+  }
+
+  let maximo = arr[0]; // Asigna el primer elemento como máximo inicial
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > maximo) {
+      maximo = arr[i];
+    }
+  }
+
+  return maximo;
+}
+
+// Función para encontrar el valor mínimo en el arreglo
+function encontrarMinimo(arr) {
+  if (arr.length === 0) {
+    return null; // Retorna null si el arreglo está vacío
+  }
+
+  let minimo = arr[0]; // Asigna el primer elemento como mínimo inicial
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < minimo) {
+      minimo = arr[i];
+    }
+  }
+
+  return minimo;
+}
+
+// Encontrando el valor máximo y mínimo del arreglo 'numeros'
+const maximo = encontrarMaximo(numeros);
+const minimo = encontrarMinimo(numeros);
+
+console.log("El valor máximo es:", maximo);
+console.log("El valor mínimo es:", minimo);
+
+
+
+
+
+54. Buscar un elemento: Pide al usuario que ingrese un número y verifica si ese número está
+presente en un arreglo dado.
+// Arreglo dado
+const arreglo = [5, 8, 12, 3, 10];
+
+// Función para verificar si un número está presente en el arreglo
+function buscarElemento(numero, arr) {
+  return arr.includes(numero);
+}
+
+// Pedir al usuario que ingrese un número
+const numeroUsuario = prompt("Ingresa un número para verificar si está en el arreglo:");
+
+// Verificar si el número ingresado por el usuario está en el arreglo
+const estaPresente = buscarElemento(parseInt(numeroUsuario), arreglo);
+
+// Mostrar el resultado
+if (estaPresente) {
+  console.log(`El número ${numeroUsuario} está presente en el arreglo.`);
+} else {
+  console.log(`El número ${numeroUsuario} no está en el arreglo.`);
+}
+
+
+
+
+
+
+55. Contar elementos pares: Cuenta cuántos números pares hay en un arreglo de números
+enteros.
+// Arreglo de números enteros
+const numeros = [3, 7, 12, 5, 8, 10, 9, 6];
+
+// Función para contar números pares en el arreglo
+function contarNumerosPares(arr) {
+  let contadorPares = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      contadorPares++;
+    }
+  }
+
+  return contadorPares;
+}
+
+// Contar números pares en el arreglo 'numeros'
+const cantidadPares = contarNumerosPares(numeros);
+console.log("La cantidad de números pares en el arreglo es:", cantidadPares);
+
+
+
+
+
+
+56. Inversión de un arreglo: Invierte el orden de los elementos en un arreglo. Por ejemplo,
+[1, 2, 3] se convierte en [3, 2, 1]
+// Arreglo original
+const arregloOriginal = [1, 2, 3, 4, 5];
+
+// Crear una copia del arreglo y revertir el orden de sus elementos
+const arregloInvertido = arregloOriginal.slice().reverse();
+
+console.log("Arreglo original:", arregloOriginal);
+console.log("Arreglo invertido:", arregloInvertido);
+
+
+
+
+
+
+57. Buscar el índice: Pide al usuario que ingrese un valor y encuentra el índice de ese valor
+en un arreglo. Si el valor aparece más de una vez, muestra todos los índices.
+// Arreglo dado
+const arreglo = [5, 8, 3, 8, 12, 8, 10, 5];
+
+// Función para encontrar los índices de un valor en el arreglo
+function encontrarIndices(valor, arr) {
+  const indices = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === valor) {
+      indices.push(i);
+    }
+  }
+
+  return indices;
+}
+
+// Pedir al usuario que ingrese un valor
+const valorUsuario = parseInt(prompt("Ingresa un valor para encontrar sus índices en el arreglo:"));
+
+// Encontrar los índices del valor ingresado por el usuario
+const indicesEncontrados = encontrarIndices(valorUsuario, arreglo);
+
+// Mostrar los resultados
+if (indicesEncontrados.length === 0) {
+  console.log(`El valor ${valorUsuario} no se encontró en el arreglo.`);
+} else {
+  console.log(`El valor ${valorUsuario} se encuentra en los índices: ${indicesEncontrados.join(', ')}`);
+}
